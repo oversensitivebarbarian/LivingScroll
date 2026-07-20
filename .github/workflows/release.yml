@@ -1,0 +1,180 @@
+# Build the target platforms on a version tag (vX.Y.Z) and publish the
+# artifacts to a GitHub Release for that tag. Tagging is the ONLY release
+# trigger — `main` stays test-gated, and a release is cut deliberately:
+#
+#   git tag v1.0.0 && git push origin v1.0.0
+#
+# The preflight job fails the whole release if the tag doesn't match
+# pubspec.yaml's `version:` — a release is always exactly what pubspec.yaml
+# says it is. Platforms: Windows (installer), Linux (AppImage), Android (APK).
+# iOS/macOS are intentionally omitted (they need a macOS runner + a paid Apple
+# Developer account) — add them later if needed.
+name: Release
+
+on:
+  push:
+    tags: ['v*.*.*']
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tag must match pubspec.yaml version
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          pubspec=$(grep -m1 '^version:' pubspec.yaml | sed -E 's/^version:\s*([0-9.]+).*/\1/')
+          echo "tag=$tag pubspec=$pubspec"
+          if [[ "$tag" != "$pubspec" ]]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match pubspec.yaml version $pubspec" >&2
+            exit 1
+          fi
+
+  windows:
+    needs: preflight
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ vars.FLUTTER_VERSION || '3.44.2' }}
+          channel: stable
+          cache: true
+
+      - name: Install Inno Setup
+        run: choco install innosetup -y
+
+      - run: flutter pub get
+
+      # Builds windows --release, stages the MSVC runtime DLLs, and invokes
+      # Inno Setup — produces dist\LivingScroll-<version>-windows-x64-setup.exe
+      - name: Build Windows installer
+        run: .\build_windows.ps1
+
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-installer
+          path: dist/*-windows-x64-setup.exe
+
+  linux:
+    needs: preflight
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Linux build deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            clang cmake ninja-build pkg-config \
+            libgtk-3-dev liblzma-dev libstdc++-12-dev
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ vars.FLUTTER_VERSION || '3.44.2' }}
+          channel: stable
+          cache: true
+
+      - run: flutter pub get
+      - name: Build Linux bundle
+        run: flutter build linux --release
+
+      - name: Package AppImage
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          scripts/build_appimage.sh "$version"
+
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-appimage
+          path: dist/*.AppImage
+
+  android:
+    needs: preflight
+    runs-on: ubuntu-latest
+    # `secrets` is not a recognized context inside step `if:` conditionals
+    # (a real "Invalid workflow file" parse error, not just a lint warning) —
+    # route the check through a job-level env var instead, which CAN see
+    # `secrets` and IS visible to every step's `if:`.
+    env:
+      HAS_ANDROID_SIGNING: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      # The app forces compileSdk 36 (android/build.gradle.kts), so the runner
+      # needs that platform + matching build-tools.
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+      - name: Install Android platform 36
+        run: yes | sdkmanager "platforms;android-36" "build-tools;36.0.0" >/dev/null
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ vars.FLUTTER_VERSION || '3.44.2' }}
+          channel: stable
+          cache: true
+
+      - run: flutter pub get
+
+      # Release signing only when the 4 secrets are configured (see
+      # docs/CI_SETUP.md "Android signing"); otherwise the build falls back to
+      # debug signing (android/app/build.gradle.kts) — installable, not
+      # Play-publishable, but the release still succeeds.
+      - name: Write Android signing config
+        if: ${{ env.HAS_ANDROID_SIGNING == 'true' }}
+        run: |
+          echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > android/app/release.jks
+          cat > android/key.properties <<EOF
+          storeFile=release.jks
+          storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}
+          keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}
+          EOF
+
+      - name: Build APK
+        run: flutter build apk --release
+
+      - name: Rename APK
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          mkdir -p dist
+          cp build/app/outputs/flutter-apk/app-release.apk "dist/LivingScroll-$version.apk"
+
+      - name: Upload Android artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apk
+          path: dist/*.apk
+
+  publish:
+    needs: [windows, linux, android]
+    runs-on: ubuntu-latest
+    # The default GITHUB_TOKEN is read-only unless a job explicitly asks for
+    # more — without this, softprops/action-gh-release fails to CREATE the
+    # release with "Resource not accessible by integration" (403). Scoped to
+    # just this job (least privilege), not a repo-wide read/write default.
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: artifacts/*
+          generate_release_notes: true
