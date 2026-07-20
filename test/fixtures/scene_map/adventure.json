@@ -1,0 +1,115 @@
+{
+  "metadata": { "name": "Metro Demo", "system": "basic" },
+  "paths": [
+    { "name": "Red Line", "color": "red", "description": "" },
+    { "name": "Blue Line", "color": "blue", "description": "" },
+    { "name": "Green Line", "color": "green", "description": "" },
+    { "name": "Yellow Line", "color": "yellow", "description": "" }
+  ],
+  "key_events": [
+    { "name": "Door unlocked", "key_event_uuid": "000000ke-0000-0000-0000-0000000000e1", "state": "unchecked" },
+    { "name": "Bridge raised", "key_event_uuid": "000000ke-0000-0000-0000-0000000000e2", "state": "unchecked" }
+  ],
+  "scenes": [
+    {
+      "name": "Central Station",
+      "scene_uuid": "00000000-0000-0000-0000-000000000001",
+      "scene_type": "start",
+      "state": "active",
+      "path_names": ["Red Line"],
+      "next_scenes": ["00000000-0000-0000-0000-000000000002"],
+      "visibility_rules": null
+    },
+    {
+      "name": "Junction Two",
+      "scene_uuid": "00000000-0000-0000-0000-000000000002",
+      "scene_type": "standard",
+      "state": "active",
+      "path_names": ["Red Line", "Blue Line"],
+      "next_scenes": ["00000000-0000-0000-0000-000000000003"],
+      "visibility_rules": null
+    },
+    {
+      "name": "Junction Three",
+      "scene_uuid": "00000000-0000-0000-0000-000000000003",
+      "scene_type": "standard",
+      "state": "active",
+      "path_names": ["Red Line", "Blue Line"],
+      "next_scenes": [
+        "00000000-0000-0000-0000-000000000004",
+        "00000000-0000-0000-0000-000000000005"
+      ],
+      "visibility_rules": null
+    },
+    {
+      "name": "Blue Terminus",
+      "scene_uuid": "00000000-0000-0000-0000-000000000004",
+      "scene_type": "end",
+      "state": "active",
+      "path_names": ["Blue Line"],
+      "next_scenes": [],
+      "visibility_rules": { "op": "and", "key_events": ["000000ke-0000-0000-0000-0000000000e1"] }
+    },
+    {
+      "name": "Green Halt",
+      "scene_uuid": "00000000-0000-0000-0000-000000000005",
+      "scene_type": "standard",
+      "state": "inactive",
+      "visited": true,
+      "path_names": ["Green Line"],
+      "next_scenes": [
+        "00000000-0000-0000-0000-000000000006",
+        "00000000-0000-0000-0000-0000000000ff"
+      ],
+      "visibility_rules": null
+    },
+    {
+      "name": "Loop Interchange",
+      "scene_uuid": "00000000-0000-0000-0000-000000000006",
+      "scene_type": "recurring",
+      "state": "active",
+      "path_names": ["Green Line", "Yellow Line"],
+      "next_scenes": ["00000000-0000-0000-0000-000000000007"],
+      "visibility_rules": null
+    },
+    {
+      "name": "Green Curve",
+      "scene_uuid": "00000000-0000-0000-0000-000000000007",
+      "scene_type": "standard",
+      "state": "active",
+      "path_names": ["Green Line"],
+      "next_scenes": [
+        "00000000-0000-0000-0000-000000000006",
+        "00000000-0000-0000-0000-000000000008"
+      ],
+      "visibility_rules": null
+    },
+    {
+      "name": "Yellow Gate",
+      "scene_uuid": "00000000-0000-0000-0000-000000000008",
+      "scene_type": "standard",
+      "state": "active",
+      "path_names": ["Yellow Line"],
+      "next_scenes": ["00000000-0000-0000-0000-000000000009"],
+      "visibility_rules": { "op": "or", "key_events": ["000000ke-0000-0000-0000-0000000000e1", "000000ke-0000-0000-0000-0000000000e2"] }
+    },
+    {
+      "name": "Yellow Approach",
+      "scene_uuid": "00000000-0000-0000-0000-000000000009",
+      "scene_type": "standard",
+      "state": "active",
+      "path_names": ["Yellow Line"],
+      "next_scenes": ["00000000-0000-0000-0000-000000000010"],
+      "visibility_rules": null
+    },
+    {
+      "name": "Yellow Terminus",
+      "scene_uuid": "00000000-0000-0000-0000-000000000010",
+      "scene_type": "end",
+      "state": "active",
+      "path_names": ["Yellow Line"],
+      "next_scenes": [],
+      "visibility_rules": null
+    }
+  ]
+}

@@ -1,0 +1,1101 @@
+{
+  "@@locale": "en",
+  "appTitle": "Living Scroll - Weave every thread",
+  "@appTitle": {
+    "description": "Application name shown in the title bar and task switcher."
+  },
+  "navHome": "Home",
+  "@navHome": {
+    "description": "Navigation rail label for the home destination."
+  },
+  "homeActiveSessions": "Active sessions",
+  "@homeActiveSessions": {
+    "description": "Home view section title over the started playthroughs (saves) row."
+  },
+  "homeMore": "More",
+  "@homeMore": {
+    "description": "Home view link at the end of a section row that opens the matching Library tab."
+  },
+  "homeCreateAdventure": "Create new adventure",
+  "@homeCreateAdventure": {
+    "description": "Home empty-state tile that opens the new-adventure form (same as the Create grid's new cell)."
+  },
+  "navCreate": "Create",
+  "@navCreate": {
+    "description": "Navigation rail label for the adventure creation destination."
+  },
+  "navLibrary": "Library",
+  "@navLibrary": {
+    "description": "Navigation rail label for the library destination."
+  },
+  "libraryAdventures": "Adventures",
+  "@libraryAdventures": {
+    "description": "Library tab listing the {Adventures} directory (unpacked .ls archives)."
+  },
+  "librarySaves": "Saves",
+  "@librarySaves": {
+    "description": "Library tab listing the {Saves} directory (in-progress playthroughs)."
+  },
+  "libraryProjects": "Projects",
+  "@libraryProjects": {
+    "description": "Library tab listing the {Projects} directory (work-in-progress adventures)."
+  },
+  "libraryFinished": "Finished",
+  "@libraryFinished": {
+    "description": "Library tab listing the {Finished} directory (completed read-only adventures)."
+  },
+  "libraryImport": "Import adventure",
+  "@libraryImport": {
+    "description": "Tooltip/label of the import tile in the Library Adventures grid (picks a .ls)."
+  },
+  "libraryImportDone": "Adventure imported",
+  "@libraryImportDone": {
+    "description": "Confirmation after a .ls is imported into the Adventures library."
+  },
+  "libraryImportDuplicate": "Already in library",
+  "@libraryImportDuplicate": {
+    "description": "Shown when the picked .ls is already in the Adventures library (not imported)."
+  },
+  "libraryImportInvalid": "Not a valid adventure file",
+  "@libraryImportInvalid": {
+    "description": "Shown when the picked .ls fails validation (not imported)."
+  },
+  "libraryCopyAsProject": "Copy as project",
+  "@libraryCopyAsProject": {
+    "description": "Library Adventures tile context-menu item: copy the library adventure into Projects as an editable copy."
+  },
+  "libraryAdventurePlay": "Play",
+  "@libraryAdventurePlay": {
+    "description": "Button on the Library Adventures info dialog that starts playing the adventure."
+  },
+  "launchGroupNameLabel": "Group name",
+  "@launchGroupNameLabel": {
+    "description": "Label of the group-name text field on the adventure launch screen; required to enable Play / Dry run."
+  },
+  "launchPlayersLabel": "Players",
+  "@launchPlayersLabel": {
+    "description": "Header of the players (PC names) section on the adventure launch screen; used later to allow party split (tracks <= players)."
+  },
+  "launchAddPlayer": "Add player",
+  "@launchAddPlayer": {
+    "description": "Tooltip/label of the + button that adds another empty player-name field on the adventure launch screen."
+  },
+  "launchPlayerNameHint": "Player name",
+  "@launchPlayerNameHint": {
+    "description": "Hint text inside an empty player-name field on the adventure launch screen."
+  },
+  "launchRemovePlayer": "Remove player",
+  "@launchRemovePlayer": {
+    "description": "Tooltip of the button that removes a player-name field on the adventure launch screen."
+  },
+  "launchLastSceneLabel": "Continues at",
+  "@launchLastSceneLabel": {
+    "description": "Header above the last-scene panel on the resume (saved game) launch screen, showing where the playthrough will continue."
+  },
+  "launchDryRun": "Prep mode",
+  "@launchDryRun": {
+    "description": "Button on the adventure launch screen: play the selected start scene WITHOUT recording any progress."
+  },
+  "launchImportProgress": "Import progress",
+  "@launchImportProgress": {
+    "description": "Button (new game only) on the adventure launch screen, and title of its dialog: import a finished game's key-event progress into the new save. Sits between Cancel and Prep mode."
+  },
+  "launchImportProgressEmpty": "No finished games to import progress from.",
+  "@launchImportProgressEmpty": {
+    "description": "Empty-state note in the Import progress dialog when there are no finished games to import from."
+  },
+  "launchReplace": "Replace",
+  "@launchReplace": {
+    "description": "Confirm button that replaces an already-started save (losing its progress)."
+  },
+  "launchSaveExistsMessage": "Adventure {adventure} for group {group} is already started. Replacing it will lose all game progress.",
+  "@launchSaveExistsMessage": {
+    "description": "Dialog body shown when a save for this adventure + group already exists; offers Replace or Cancel.",
+    "placeholders": {
+      "adventure": {
+        "type": "String"
+      },
+      "group": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryCopyDone": "Copied to projects",
+  "@libraryCopyDone": {
+    "description": "Confirmation after a library adventure is copied into Projects."
+  },
+  "libraryExportLatex": "Export to LaTeX",
+  "@libraryExportLatex": {
+    "description": "Context-menu item on a Library Adventures tile: export the adventure as a LaTeX document (ZIP)."
+  },
+  "libraryExportLatexDone": "LaTeX document exported",
+  "@libraryExportLatexDone": {
+    "description": "SnackBar after a LaTeX export ZIP is saved."
+  },
+  "libraryExportLatexError": "Could not export the adventure to LaTeX",
+  "@libraryExportLatexError": {
+    "description": "SnackBar when a LaTeX export fails (adventure missing/unreadable)."
+  },
+  "latexChapterScenes": "Scenes",
+  "@latexChapterScenes": {
+    "description": "LaTeX export: Chapter 1 title (in the adventure's language)."
+  },
+  "latexChapterNpcs": "NPCs",
+  "@latexChapterNpcs": {
+    "description": "LaTeX export: Chapter 2 title, and the in-scene NPC subsection heading."
+  },
+  "latexChapterPaths": "Paths",
+  "@latexChapterPaths": {
+    "description": "LaTeX export: the Paths chapter title, shown before Chapter 1 (Scenes) only when the adventure defines any paths."
+  },
+  "latexNarration": "Narration",
+  "@latexNarration": {
+    "description": "LaTeX export: a scene's Narration subsection heading."
+  },
+  "latexNotes": "Notes",
+  "@latexNotes": {
+    "description": "LaTeX export: a scene's Notes subsection heading."
+  },
+  "latexImages": "Images",
+  "@latexImages": {
+    "description": "LaTeX export: a scene's Images subsection heading."
+  },
+  "latexNextScenes": "Next scenes",
+  "@latexNextScenes": {
+    "description": "LaTeX export: a scene's Next scenes subsection heading."
+  },
+  "latexShortDescription": "Short description",
+  "@latexShortDescription": {
+    "description": "LaTeX export: an NPC's short-description subsubsection heading."
+  },
+  "latexBackstory": "Backstory",
+  "@latexBackstory": {
+    "description": "LaTeX export: an NPC's backstory subsubsection heading."
+  },
+  "latexVisibleWhen": "Visible when",
+  "@latexVisibleWhen": {
+    "description": "LaTeX export: label before a visibility-rule condition."
+  },
+  "latexStats": "Stats",
+  "@latexStats": {
+    "description": "LaTeX export: the Stats subsubsection heading for a 7th Sea 2e NPC (villain/brute)."
+  },
+  "latexSceneTypeStart": "opening scene",
+  "@latexSceneTypeStart": {
+    "description": "LaTeX export: the scene_type phrase for 'start' in a section title."
+  },
+  "latexSceneTypeStandard": "standard scene",
+  "@latexSceneTypeStandard": {
+    "description": "LaTeX export: the scene_type phrase for 'standard'."
+  },
+  "latexSceneTypeRecurring": "recurring scene",
+  "@latexSceneTypeRecurring": {
+    "description": "LaTeX export: the scene_type phrase for 'recurring'."
+  },
+  "latexSceneTypeEnd": "ending scene",
+  "@latexSceneTypeEnd": {
+    "description": "LaTeX export: the scene_type phrase for 'end'."
+  },
+  "latexPageReferenceTemplate": "page {page}",
+  "@latexPageReferenceTemplate": {
+    "description": "LaTeX export: the Paths chapter's page-number parenthetical template — '{page}' is replaced verbatim with a \\pageref{...} LaTeX call (word order varies per language)."
+  },
+  "librarySaveDeleteMessage": "Deleting this save will lose all progress of the in-progress game.",
+  "@librarySaveDeleteMessage": {
+    "description": "Confirm-dialog body shown before deleting a Saves tile (an in-progress playthrough)."
+  },
+  "libraryFinishedDeleteMessage": "Deleting this finished session is permanent — it cannot be recovered.",
+  "@libraryFinishedDeleteMessage": {
+    "description": "Confirm-dialog body shown before deleting a Finished tile (a completed, archived session)."
+  },
+  "navSettings": "Settings",
+  "@navSettings": {
+    "description": "Navigation rail label for the settings destination."
+  },
+  "navMap": "Map",
+  "@navMap": {
+    "description": "Navigation rail / menu label for the scene Map destination (game and play views)."
+  },
+  "sceneMapAllPaths": "All paths",
+  "@sceneMapAllPaths": {
+    "description": "Scene map legend chip that clears the line filter and shows every path."
+  },
+  "sceneMapEmpty": "No scenes to map yet.",
+  "@sceneMapEmpty": {
+    "description": "Empty-state message shown on the scene map when there are no scenes."
+  },
+  "menuTooltip": "Menu",
+  "@menuTooltip": {
+    "description": "Tooltip for the leading menu button in the navigation rail."
+  },
+  "settingsLanguageLabel": "Language",
+  "@settingsLanguageLabel": {
+    "description": "Label above the language override dropdown on the Settings screen."
+  },
+  "settingsLanguageSystemDefault": "System default",
+  "@settingsLanguageSystemDefault": {
+    "description": "Language dropdown entry meaning no override (follow the system / default language)."
+  },
+  "settingsDisplayModeLabel": "Display Mode",
+  "@settingsDisplayModeLabel": {
+    "description": "Label above the display-mode (light/dark/auto) options on the Settings screen."
+  },
+  "settingsModeLight": "Light",
+  "@settingsModeLight": {
+    "description": "Display-mode option forcing the light theme."
+  },
+  "settingsModeDark": "Dark",
+  "@settingsModeDark": {
+    "description": "Display-mode option forcing the dark theme."
+  },
+  "settingsModeAuto": "Auto",
+  "@settingsModeAuto": {
+    "description": "Display-mode option following the system brightness (the application default)."
+  },
+  "settingsSave": "Save",
+  "@settingsSave": {
+    "description": "Button that persists the pending settings overrides."
+  },
+  "settingsMusicLabel": "Music",
+  "@settingsMusicLabel": {
+    "description": "Settings section header for music options."
+  },
+  "settingsAutoplayLabel": "Autoplay",
+  "@settingsAutoplayLabel": {
+    "description": "Label for the toggle that auto-plays a scene's music; on by default."
+  },
+  "settingsBuildSectionLabel": "Build",
+  "@settingsBuildSectionLabel": {
+    "description": "Settings section header for the app's own build/version info."
+  },
+  "settingsVersionLabel": "Version",
+  "@settingsVersionLabel": {
+    "description": "Label for the row showing the app's version (from the running build)."
+  },
+  "settingsBuildNumberLabel": "Build number",
+  "@settingsBuildNumberLabel": {
+    "description": "Label for the row showing the app's build number (from the running build)."
+  },
+  "unsavedTitle": "Unsaved changes",
+  "@unsavedTitle": {
+    "description": "Title of the dialog shown when navigating away from a screen with unsaved changes."
+  },
+  "unsavedMessage": "You have unsaved changes. Save them before leaving?",
+  "@unsavedMessage": {
+    "description": "Body of the unsaved-changes dialog asking the user to choose how to leave."
+  },
+  "unsavedAbandon": "Discard",
+  "@unsavedAbandon": {
+    "description": "Unsaved-changes dialog button: leave without saving, discarding pending changes."
+  },
+  "unsavedCancel": "Cancel",
+  "librarySaveEdit": "Edit",
+  "@unsavedCancel": {
+    "description": "Unsaved-changes dialog button: dismiss the prompt and stay on the current screen."
+  },
+  "createNewCoverLabel": "Add cover",
+  "@createNewCoverLabel": {
+    "description": "Hint shown on the empty cover picker tile of the new-adventure form."
+  },
+  "createNewTitleLabel": "Title",
+  "@createNewTitleLabel": {
+    "description": "Label for the required adventure title field."
+  },
+  "createNewVersionLabel": "Version",
+  "@createNewVersionLabel": {
+    "description": "Label for the adventure version field."
+  },
+  "createNewSystemLabel": "System",
+  "@createNewSystemLabel": {
+    "description": "Label for the required game-system dropdown."
+  },
+  "createNewSystemHint": "Select a system",
+  "@createNewSystemHint": {
+    "description": "Placeholder shown in the system dropdown before a system is chosen."
+  },
+  "createNewAuthorLabel": "Author",
+  "@createNewAuthorLabel": {
+    "description": "Label for the adventure author field."
+  },
+  "createNewDescriptionLabel": "Description",
+  "@createNewDescriptionLabel": {
+    "description": "Label for the adventure description field."
+  },
+  "createNewLanguageLabel": "Language",
+  "@createNewLanguageLabel": {
+    "description": "Label for the adventure language field."
+  },
+  "createNewLanguageUnset": "Not specified",
+  "@createNewLanguageUnset": {
+    "description": "The 'no language chosen' option in the adventure language dropdown (language is optional)."
+  },
+  "createNewContentWarningsLabel": "Content warnings",
+  "@createNewContentWarningsLabel": {
+    "description": "Label for the adventure content-warnings field."
+  },
+  "createNewLicenseLabel": "License",
+  "@createNewLicenseLabel": {
+    "description": "Label for the adventure license field."
+  },
+  "createNewImport": "Import data",
+  "@createNewImport": {
+    "description": "Secondary button that imports an external LivingScroll.json into the new adventure."
+  },
+  "createNewCreate": "Create",
+  "@createNewCreate": {
+    "description": "Primary button that creates the adventure and opens the game screen."
+  },
+  "createNewImportInvalid": "The selected file is not a valid adventure.",
+  "@createNewImportInvalid": {
+    "description": "Error shown when an imported file fails schema validation."
+  },
+  "createNewImportSuccess": "Content imported",
+  "@createNewImportSuccess": {
+    "description": "Confirmation shown when an imported file passes validation and is staged."
+  },
+  "importSelectTitle": "Select data to import",
+  "@importSelectTitle": {
+    "description": "Title of the dialog that lists the importable content categories as checkboxes."
+  },
+  "importConfirm": "Import",
+  "@importConfirm": {
+    "description": "Button that performs the import of the selected categories."
+  },
+  "importDone": "Data imported",
+  "@importDone": {
+    "description": "Confirmation shown after the selected data has been imported into the adventure."
+  },
+  "importNothing": "No elements to import. Either already existing or not compatible with system",
+  "@importNothing": {
+    "description": "Shown in the import dialog when nothing can be imported: every element is already in the adventure or was skipped as system-incompatible."
+  },
+  "gameGmNotes": "GM notes",
+  "@gameGmNotes": {
+    "description": "Label for the GM-notes content category (gm_notes)."
+  },
+  "coverCropTitle": "Crop cover",
+  "@coverCropTitle": {
+    "description": "Header of the cover-crop dialog."
+  },
+  "coverCropConfirm": "Crop",
+  "@coverCropConfirm": {
+    "description": "Button that accepts the selected crop region as the cover."
+  },
+  "coverCropCancel": "Cancel",
+  "@coverCropCancel": {
+    "description": "Button that dismisses the cover-crop dialog without staging a cover."
+  },
+  "gameScenes": "Scenes",
+  "@gameScenes": {
+    "description": "In-game navigation rail label for the scenes section."
+  },
+  "gameNpcs": "NPCs",
+  "@gameNpcs": {
+    "description": "In-game navigation rail label for the NPCs section."
+  },
+  "gameNotes": "Notes",
+  "@gameNotes": {
+    "description": "In-game navigation rail label for the notes section."
+  },
+  "gameKeyEvents": "Key events",
+  "@gameKeyEvents": {
+    "description": "In-game navigation rail label for the key-events section."
+  },
+  "gameImages": "Images",
+  "@gameImages": {
+    "description": "In-game navigation rail label for the images section."
+  },
+  "gameSoundtracks": "Soundtracks",
+  "@gameSoundtracks": {
+    "description": "In-game navigation rail label for the soundtracks section."
+  },
+  "gamePaths": "Paths",
+  "@gamePaths": {
+    "description": "In-game navigation rail label for the paths section."
+  },
+  "gamePublish": "Export",
+  "@gamePublish": {
+    "description": "In-game navigation rail trailing action that validates the adventure for publishing."
+  },
+  "gameExportPart": "Export elements",
+  "@gameExportPart": {
+    "description": "In-game rail trailing action: a partial export (name + system only) producing a downloadable .lse file."
+  },
+  "publishValidTitle": "Exported",
+  "@publishValidTitle": {
+    "description": "Title of the dialog shown when the adventure passes all publish checks."
+  },
+  "publishValidMessage": "The adventure was successfully exported.",
+  "@publishValidMessage": {
+    "description": "Body of the publish dialog when the adventure is valid."
+  },
+  "publishElementsReady": "The elements file is ready to download.",
+  "@publishElementsReady": {
+    "description": "Body of the Export-elements success dialog (the .lse is ready to download)."
+  },
+  "publishInvalidTitle": "Cannot publish yet",
+  "@publishInvalidTitle": {
+    "description": "Title of the dialog listing problems that block publishing."
+  },
+  "publishDownloadLs": "Download .ls",
+  "@publishDownloadLs": {
+    "description": "Button on the export success dialog that saves the portable .ls archive to a chosen location."
+  },
+  "publishDownloadLse": "Download .lse",
+  "@publishDownloadLse": {
+    "description": "Button on the Export-elements success dialog that saves the partial .lse archive to a chosen location."
+  },
+  "libraryDuplicateTitle": "Already in library",
+  "@libraryDuplicateTitle": {
+    "description": "Title of the dialog shown when exporting an adventure already present in the Adventures library."
+  },
+  "libraryDuplicateMessage": "An adventure with the same title, version, system, author and language is already in your library. Overwrite it?",
+  "@libraryDuplicateMessage": {
+    "description": "Body of the library-duplicate dialog (offers Overwrite or Cancel)."
+  },
+  "libraryOverwrite": "Overwrite",
+  "@libraryOverwrite": {
+    "description": "Confirm button that replaces the existing library copy of the adventure."
+  },
+  "publishIssueAdventureField": "Adventure setting \"{field}\" is required.",
+  "@publishIssueAdventureField": {
+    "description": "A required adventure metadata field is empty.",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    }
+  },
+  "publishIssueNpcIncomplete": "NPC \"{name}\" needs a name and both portrait images.",
+  "@publishIssueNpcIncomplete": {
+    "description": "An NPC is missing its name or one of its portrait images.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "publishIssueNoteName": "A note is missing its name or content.",
+  "@publishIssueNoteName": {
+    "description": "A note has no name."
+  },
+  "publishIssueNoStartScene": "There must be at least one start scene.",
+  "@publishIssueNoStartScene": {
+    "description": "The adventure has no start scene."
+  },
+  "publishIssueNoEndScene": "There must be at least one end scene.",
+  "@publishIssueNoEndScene": {
+    "description": "The adventure has no end scene."
+  },
+  "publishIssueEndSceneHasNext": "End scene \"{name}\" must not have a next scene.",
+  "@publishIssueEndSceneHasNext": {
+    "description": "An end scene declares a next scene.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "publishIssueSceneNoNext": "Scene \"{name}\" must have a next scene.",
+  "@publishIssueSceneNoNext": {
+    "description": "A non-end scene declares no next scene.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "publishIssueSceneOnlyConditionalNext": "Scene \"{name}\" must have at least one next scene that is always available.",
+  "@publishIssueSceneOnlyConditionalNext": {
+    "description": "A non-end scene's only next scenes are all conditional.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "publishIssueNoPathToEnd": "No path of always-available scenes leads from a start scene to an end scene.",
+  "@publishIssueNoPathToEnd": {
+    "description": "No unconditional path reaches an end scene."
+  },
+  "publishIssueBlindLoop": "Scene \"{name}\" is a dead loop: another scene leads back to it after it has already been visited. Make it a recurring scene to allow returning.",
+  "@publishIssueBlindLoop": {
+    "description": "A non-recurring scene lies on a next_scenes cycle (blind loop).",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "publishIssuePathNoStartScene": "Path \"{name}\" must have a start scene.",
+  "@publishIssuePathNoStartScene": {
+    "description": "A named story path has no start scene tagged onto it.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "publishIssuePathNoEndScene": "Path \"{name}\" must have an end scene.",
+  "@publishIssuePathNoEndScene": {
+    "description": "A named story path has no end scene tagged onto it.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "publishIssuePathNoRouteToEnd": "Within path \"{name}\"'s own scenes, no route of always-available scenes leads from its start scene to its end scene.",
+  "@publishIssuePathNoRouteToEnd": {
+    "description": "No unconditional route within a story path's own tagged scenes reaches its end scene.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "gameAdventureSettings": "Adventure settings",
+  "@gameAdventureSettings": {
+    "description": "In-game navigation rail label for the adventure-settings section (edits the adventure's metadata and cover)."
+  },
+  "pathEditNameLabel": "Path name",
+  "@pathEditNameLabel": {
+    "description": "Label for the path name field on the path edit form (Paths section)."
+  },
+  "pathNameRequired": "This path is used by a scene, so it needs a name",
+  "@pathNameRequired": {
+    "description": "Dialog message shown when Save is attempted on a path that is referenced by a scene's path_names but whose name field has been left blank."
+  },
+  "visibilityRulesTitle": "Visibility rules",
+  "@visibilityRulesTitle": {
+    "description": "Header of the GM-only visibility-rules editor."
+  },
+  "visibilityRulesAnd": "All satisfied",
+  "@visibilityRulesAnd": {
+    "description": "Operator radio (AND): the object is visible when ALL selected key events are checked."
+  },
+  "visibilityRulesOr": "Any satisfied",
+  "@visibilityRulesOr": {
+    "description": "Operator radio (OR): the object is visible when ANY selected key event is checked."
+  },
+  "visibilityRulesAlwaysVisible": "Always visible",
+  "@visibilityRulesAlwaysVisible": {
+    "description": "Hint shown in the visibility-rules editor when no key events are selected (no gate)."
+  },
+  "visibilityRulesNoEvents": "Add key events first",
+  "@visibilityRulesNoEvents": {
+    "description": "Hint shown in the visibility-rules editor when the adventure has no key events to choose from."
+  },
+  "notesAddLabel": "Add note",
+  "@notesAddLabel": {
+    "description": "Label on the empty 'add note' cell of the Notes grid."
+  },
+  "notesNameLabel": "Note name",
+  "@notesNameLabel": {
+    "description": "Label for the note name field on the note edit form."
+  },
+  "notesContentLabel": "Content",
+  "@notesContentLabel": {
+    "description": "Label for the note content field on the note edit form."
+  },
+  "notesInsertImage": "Insert image",
+  "@notesInsertImage": {
+    "description": "Tooltip for the note editor toolbar button that embeds an image into the note body."
+  },
+  "notesImagePickTitle": "Insert image",
+  "@notesImagePickTitle": {
+    "description": "Title of the dialog that picks an image (adventure image or NPC portrait) to embed in a note."
+  },
+  "notesImagePickEmpty": "No images available",
+  "@notesImagePickEmpty": {
+    "description": "Shown in the note image picker when the adventure has no images or NPC portraits to embed."
+  },
+  "notesImagePickGroupImages": "Images",
+  "@notesImagePickGroupImages": {
+    "description": "Header over the adventure images section of the note image picker."
+  },
+  "notesImagePickGroupNpcs": "NPCs",
+  "@notesImagePickGroupNpcs": {
+    "description": "Header over the NPC portraits section of the note image picker."
+  },
+  "notesDeleteMessage": "Delete this note?",
+  "@notesDeleteMessage": {
+    "description": "Body of the confirm dialog shown before deleting a note."
+  },
+  "notesDelete": "Delete",
+  "@notesDelete": {
+    "description": "Confirm button that deletes a note."
+  },
+  "notesNameNotUnique": "Note title must be unique",
+  "@notesNameNotUnique": {
+    "description": "Dialog message shown when the user tries to save a note whose name is already used by another note in the same document."
+  },
+  "notesSearchHint": "Search notes",
+  "@notesSearchHint": {
+    "description": "Placeholder hint in the search field at the top of the Notes section; filtering matches the note title and content."
+  },
+  "notesSearchClear": "Clear search",
+  "@notesSearchClear": {
+    "description": "Tooltip/label for the button at the end of the Notes search field that clears the query."
+  },
+  "keyEventsNameLabel": "Event name",
+  "@keyEventsNameLabel": {
+    "description": "Label for the event name field on the key-event edit form."
+  },
+  "keyEventsDeleteMessage": "Delete this event? Every reference to it will be removed.",
+  "@keyEventsDeleteMessage": {
+    "description": "Body of the confirm dialog shown before cascade-deleting a key event."
+  },
+  "keyEventsDelete": "Delete",
+  "@keyEventsDelete": {
+    "description": "Confirm button that cascade-deletes a key event."
+  },
+  "keyEventsNameNotUnique": "Event name must be unique",
+  "@keyEventsNameNotUnique": {
+    "description": "Dialog message shown when the user tries to save a key event whose name is already used by another event in the same document."
+  },
+  "keyEventsSearchHint": "Search events",
+  "@keyEventsSearchHint": {
+    "description": "Placeholder hint in the search field at the top of the Key events section; filtering matches the event name and description."
+  },
+  "keyEventsSearchClear": "Clear search",
+  "@keyEventsSearchClear": {
+    "description": "Tooltip/label for the button at the end of the Key events search field that clears the query."
+  },
+  "soundtracksAddLabel": "Add soundtrack",
+  "@soundtracksAddLabel": {
+    "description": "Label of the 'add soundtrack' action row at the top of the Soundtracks list."
+  },
+  "soundtracksDeleteMessage": "Delete this soundtrack?",
+  "@soundtracksDeleteMessage": {
+    "description": "Body of the confirm dialog shown before deleting a soundtrack (removes the entry and its audio file)."
+  },
+  "soundtracksDelete": "Delete",
+  "@soundtracksDelete": {
+    "description": "Confirm button that deletes a soundtrack and its file."
+  },
+  "soundtracksNameNotUnique": "A soundtrack with this name already exists",
+  "@soundtracksNameNotUnique": {
+    "description": "Dialog message shown when an added soundtrack's derived display name is already used by another track."
+  },
+  "soundtracksSearchHint": "Search soundtracks",
+  "@soundtracksSearchHint": {
+    "description": "Placeholder hint in the search field at the top of the Soundtracks section; filtering matches the track name."
+  },
+  "soundtracksSearchClear": "Clear search",
+  "@soundtracksSearchClear": {
+    "description": "Tooltip/label for the button at the end of the Soundtracks search field that clears the query."
+  },
+  "imagesPickLabel": "Choose image",
+  "@imagesPickLabel": {
+    "description": "Button that opens the image picker on the location edit form."
+  },
+  "imagesAddTooltip": "Add image",
+  "@imagesAddTooltip": {
+    "description": "Tooltip on the empty + tile that picks an image to add in the Images section."
+  },
+  "imagesDeleteMessage": "Delete this image?",
+  "@imagesDeleteMessage": {
+    "description": "Body of the confirm dialog shown before deleting an image."
+  },
+  "imagesDelete": "Delete",
+  "@imagesDelete": {
+    "description": "Confirm button that deletes an image."
+  },
+  "imagesAddButton": "Add",
+  "@imagesAddButton": {
+    "description": "Primary button on the Images add form that commits the picked image."
+  },
+  "npcsNameLabel": "Name",
+  "@npcsNameLabel": {
+    "description": "Label of the required, unique name field on the NPC edit form."
+  },
+  "npcsDescriptionLabel": "Description",
+  "@npcsDescriptionLabel": {
+    "description": "Label of the description field on the NPC edit form."
+  },
+  "npcsBackstoryLabel": "Backstory",
+  "@npcsBackstoryLabel": {
+    "description": "Label of the backstory field on the NPC edit form."
+  },
+  "npcsFullImageLabel": "Full image",
+  "@npcsFullImageLabel": {
+    "description": "Empty-state label of the full-image picker on the NPC edit form."
+  },
+  "npcsIconLabel": "Icon",
+  "@npcsIconLabel": {
+    "description": "Empty-state label of the icon-image picker on the NPC edit form."
+  },
+  "npcsCropFull": "Crop full image",
+  "@npcsCropFull": {
+    "description": "Header of the crop step for an NPC's full image."
+  },
+  "npcsCropIcon": "Crop icon",
+  "@npcsCropIcon": {
+    "description": "Header of the crop step for an NPC's icon (cropped from the full image)."
+  },
+  "npcsClone": "Clone",
+  "@npcsClone": {
+    "description": "NPC tile context-menu item that duplicates the NPC."
+  },
+  "npcsDelete": "Delete",
+  "@npcsDelete": {
+    "description": "NPC tile context-menu item / confirm button that deletes the NPC."
+  },
+  "npcsDeleteMessage": "Delete this NPC?",
+  "@npcsDeleteMessage": {
+    "description": "Body of the confirm dialog shown before deleting an NPC."
+  },
+  "npcsNameNotUnique": "An NPC with this name already exists",
+  "@npcsNameNotUnique": {
+    "description": "Dialog message shown when an NPC's name is already used by another NPC."
+  },
+  "npcsSearchHint": "Search NPCs",
+  "@npcsSearchHint": {
+    "description": "Placeholder hint in the search field at the top of the NPC section."
+  },
+  "npcsSearchClear": "Clear search",
+  "@npcsSearchClear": {
+    "description": "Tooltip/label for the button that clears the NPC search query."
+  },
+  "adventureClone": "Clone",
+  "@adventureClone": {
+    "description": "Adventure tile context-menu item that duplicates the adventure into a new project."
+  },
+  "adventureDelete": "Delete",
+  "@adventureDelete": {
+    "description": "Adventure tile context-menu item / confirm button that deletes the adventure."
+  },
+  "adventureDeleteMessage": "Delete this adventure?",
+  "@adventureDeleteMessage": {
+    "description": "Body of the confirm dialog shown before deleting an adventure from the Create grid."
+  },
+  "scenesAddLabel": "Add scene",
+  "@scenesAddLabel": {
+    "description": "Tooltip/label of the add action at the top of the Scenes list."
+  },
+  "scenesSearchHint": "Search scenes",
+  "@scenesSearchHint": {
+    "description": "Placeholder hint in the search field at the top of the Scenes section."
+  },
+  "scenesSearchClear": "Clear search",
+  "@scenesSearchClear": {
+    "description": "Tooltip for the button that clears the Scenes search query."
+  },
+  "scenesDeleteMessage": "Delete this scene?",
+  "@scenesDeleteMessage": {
+    "description": "Body of the confirm dialog shown before deleting a scene."
+  },
+  "scenesDelete": "Delete",
+  "@scenesDelete": {
+    "description": "Confirm button that deletes a scene."
+  },
+  "scenesNameNotUnique": "A scene with this name already exists",
+  "@scenesNameNotUnique": {
+    "description": "Dialog message shown when a scene's name is already used by another scene."
+  },
+  "sceneNameLabel": "Name",
+  "@sceneNameLabel": {
+    "description": "Label of the scene name field in the scene editor."
+  },
+  "sceneNarrationLabel": "Narration",
+  "@sceneNarrationLabel": {
+    "description": "Label of the full-width narration (description) field in the scene editor."
+  },
+  "sceneSectionNpc": "NPC",
+  "@sceneSectionNpc": {
+    "description": "Divider label for the NPC section of the scene editor."
+  },
+  "sceneSectionNotes": "Notes",
+  "@sceneSectionNotes": {
+    "description": "Divider label for the Notes section of the scene editor."
+  },
+  "playGmNotes": "GM Notes",
+  "@playGmNotes": {
+    "description": "Play view rail item (last) opening the GM notes grid for the current scene."
+  },
+  "playGmNoteAdd": "Add GM note",
+  "@playGmNoteAdd": {
+    "description": "Title of the add-GM-note form / tooltip of the add tile in the play view's GM Notes grid."
+  },
+  "playGmNoteGlobal": "Global note",
+  "@playGmNoteGlobal": {
+    "description": "Checkbox on the add-GM-note form: when checked the note is added to every scene, not just the current one."
+  },
+  "playGmNoteDeleteMessage": "Deleting this GM note removes it from every scene. This cannot be undone.",
+  "@playGmNoteDeleteMessage": {
+    "description": "Body of the confirmation dialog when deleting a GM note from the play view's GM Notes grid."
+  },
+  "playNpcDeactivate": "Deactivate NPC",
+  "@playNpcDeactivate": {
+    "description": "Tooltip of the play view's NPC tile button that greys out (deactivates) the NPC; committed as npcs[].state == inactive on the next scene navigation."
+  },
+  "playVillains": "Villains (global)",
+  "@playVillains": {
+    "description": "Play view rail item (7th Sea 2nd Edition only, ALWAYS the last rail item) opening the Villains grid: every Villain-kind NPC in the whole adventure, regardless of scene attachment. The label spells out \"(global)\" since this is the one rail item that is not scene-scoped."
+  },
+  "sceneSectionKeyEvents": "Key events",
+  "@sceneSectionKeyEvents": {
+    "description": "Divider label for the Key events section of the scene editor."
+  },
+  "sceneSectionImages": "Images",
+  "@sceneSectionImages": {
+    "description": "Divider label for the Images section of the scene editor."
+  },
+  "sceneSectionAudio": "Soundtracks",
+  "@sceneSectionAudio": {
+    "description": "Divider label for the Soundtracks section of the scene editor."
+  },
+  "sceneSectionPaths": "Paths",
+  "@sceneSectionPaths": {
+    "description": "Divider label for the Paths multi-select of the scene editor."
+  },
+  "sceneAddNotes": "Add notes",
+  "@sceneAddNotes": {
+    "description": "Label of the button that opens the notes picker in the scene editor."
+  },
+  "sceneChooseSoundtrack": "Choose soundtrack",
+  "@sceneChooseSoundtrack": {
+    "description": "Placeholder label on the soundtrack button when none is selected."
+  },
+  "scenePickNpcTitle": "Select NPCs",
+  "@scenePickNpcTitle": {
+    "description": "App bar title of the scene NPC picker."
+  },
+  "scenePickNotesTitle": "Select notes",
+  "@scenePickNotesTitle": {
+    "description": "App bar title of the scene notes picker."
+  },
+  "scenePickKeyEventsTitle": "Select key events",
+  "@scenePickKeyEventsTitle": {
+    "description": "App bar title of the scene key events picker."
+  },
+  "scenePickImagesTitle": "Select images",
+  "@scenePickImagesTitle": {
+    "description": "App bar title of the scene images picker."
+  },
+  "scenePickSoundtrackTitle": "Select soundtrack",
+  "@scenePickSoundtrackTitle": {
+    "description": "App bar title of the scene soundtrack picker."
+  },
+  "sceneSectionType": "Scene type",
+  "@sceneSectionType": {
+    "description": "Divider label for the scene-type radio in the scene editor."
+  },
+  "sceneTypeStart": "Starting scene",
+  "@sceneTypeStart": {
+    "description": "Scene-type radio: the adventure's starting scene (scene_type=start)."
+  },
+  "sceneTypeStandard": "Standard scene",
+  "@sceneTypeStandard": {
+    "description": "Scene-type radio: a standard scene (scene_type=standard)."
+  },
+  "sceneTypeRecurring": "Recurring scene",
+  "@sceneTypeRecurring": {
+    "description": "Scene-type radio: a recurring scene (scene_type=recurring)."
+  },
+  "sceneTypeEnd": "Ending scene",
+  "@sceneTypeEnd": {
+    "description": "Scene-type radio: an ending scene (scene_type=end)."
+  },
+  "sceneSectionNextScenes": "Next scenes",
+  "@sceneSectionNextScenes": {
+    "description": "Divider label and button label for the Next scenes section of the scene editor."
+  },
+  "scenePickNextScenesTitle": "Select next scenes",
+  "@scenePickNextScenesTitle": {
+    "description": "App bar title of the next-scenes picker."
+  },
+  "dialogOk": "OK",
+  "@dialogOk": {
+    "description": "Generic OK button shown in form dialogs (e.g. the name-not-unique alerts)."
+  },
+  "dialogClose": "Close",
+  "@dialogClose": {
+    "description": "Generic Close button that dismisses a detail/info dialog (e.g. the NPC info window)."
+  },
+  "playPauseSession": "Pause session",
+  "@playPauseSession": {
+    "description": "Play view rail item that pauses the session / exits the preview."
+  },
+  "playAdHocScene": "Ad-hoc scene",
+  "@playAdHocScene": {
+    "description": "Play view button that starts an improvised scene (hidden on ending scenes)."
+  },
+  "playPreviousScene": "Previous scene",
+  "@playPreviousScene": {
+    "description": "Prep-mode play view button (first in the Next scenes row) that goes back to the scene the player arrived from."
+  },
+  "playNextScene": "Next scene",
+  "@playNextScene": {
+    "description": "Replay view button that steps forward to the next scene in the finished session's recorded chronology."
+  },
+  "playFinishAdventure": "Finish adventure",
+  "@playFinishAdventure": {
+    "description": "Gameplay button on an end scene: saves progress, archives the playthrough to Finished, and returns Home."
+  },
+  "playSplitParty": "Split party",
+  "@playSplitParty": {
+    "description": "Play view button (near the Next scenes row) that opens the split dialog to divide the focused track into two tracks."
+  },
+  "playSplitTitle": "Split party",
+  "@playSplitTitle": {
+    "description": "Title of the split dialog where the GM picks which player-characters move to the new track."
+  },
+  "playSplitAssignHint": "Choose the players who move to the new track:",
+  "@playSplitAssignHint": {
+    "description": "Instruction above the player checkboxes in the split dialog (at least one moves, at least one stays)."
+  },
+  "playSplitConfirm": "Split",
+  "@playSplitConfirm": {
+    "description": "Confirm button of the split dialog; enabled once at least one player is selected and at least one is left behind."
+  },
+  "playPipSwitchFocus": "Switch focus",
+  "@playPipSwitchFocus": {
+    "description": "Tooltip of a picture-in-picture track thumbnail: tapping it makes that track the focused (full-screen) one."
+  },
+  "playAdHocTitle": "Ad-hoc scene",
+  "@playAdHocTitle": {
+    "description": "Title of the dialog that names a new ad-hoc (improvised) scene before starting it."
+  },
+  "playAdHocNameLabel": "Scene name",
+  "@playAdHocNameLabel": {
+    "description": "Label of the name field in the ad-hoc scene dialog; required (Confirm stays disabled while blank)."
+  },
+  "playAdHocConfirm": "Start",
+  "@playAdHocConfirm": {
+    "description": "Confirm button of the ad-hoc scene dialog; enabled once a name is entered. Starts the improvised scene."
+  },
+  "playMergeHint": "→ merge",
+  "@playMergeHint": {
+    "description": "Marker on a next-scene button (or jump target) whose scene is already occupied by another party track: following it merges the two tracks."
+  },
+  "playJumpToScene": "Jump to scene",
+  "@playJumpToScene": {
+    "description": "Play view button (party split): shown when the party is split or the track is in a dead end; opens the jump-target dialog."
+  },
+  "playJumpTitle": "Jump to scene",
+  "@playJumpTitle": {
+    "description": "Title of the Jump-to-scene dialog listing the scenes the focused track can jump to."
+  },
+  "playEndTrack": "End this group",
+  "@playEndTrack": {
+    "description": "Gameplay button on an end scene when other party tracks are still active: ends only this track (focus passes to another) instead of finishing the whole adventure."
+  },
+  "playPauseConfirm": "Save progress and go to main?",
+  "@playPauseConfirm": {
+    "description": "Body of the gameplay Pause confirm dialog."
+  },
+  "sceneSectionBackground": "Background image",
+  "scenePickBackgroundTitle": "Select background image",
+  "@sceneSectionBackground": {
+    "description": "Divider label for the Background image section at the bottom of the scene editor."
+  },
+  "@scenePickBackgroundTitle": {
+    "description": "Title of the Background image picker opened from the scene editor."
+  },
+  "npcSeaPageKind": "NPC type",
+  "@npcSeaPageKind": {
+    "description": "7th Sea NPC wizard: title of page 1 (the kind selector)."
+  },
+  "npcSeaPageDetails": "Details",
+  "@npcSeaPageDetails": {
+    "description": "7th Sea NPC wizard: title of page 2 (details)."
+  },
+  "npcSeaNext": "Next",
+  "@npcSeaNext": {
+    "description": "7th Sea NPC wizard next button."
+  },
+  "npcSeaBack": "Back",
+  "@npcSeaBack": {
+    "description": "7th Sea NPC wizard back button."
+  },
+  "npcSeaKindLabel": "NPC type",
+  "@npcSeaKindLabel": {
+    "description": "7th Sea NPC: label of the kind (type) field."
+  },
+  "npcSeaKindVillain": "Villain",
+  "@npcSeaKindVillain": {
+    "description": "7th Sea NPC kind: Villain."
+  },
+  "npcSeaKindBrute": "Brutes, Monsters, Allies",
+  "@npcSeaKindBrute": {
+    "description": "7th Sea NPC kind: Brutes, Monsters, Allies (a Strength-only NPC)."
+  },
+  "npcSeaKindMonster": "Story character",
+  "@npcSeaKindMonster": {
+    "description": "7th Sea NPC kind: Story character (a narrative NPC with no stats)."
+  },
+  "npcSeaComputed": "computed",
+  "@npcSeaComputed": {
+    "description": "7th Sea NPC: suffix on a computed (derived) read-only field."
+  },
+  "statSeaStrength": "Strength",
+  "@statSeaStrength": {
+    "description": "7th Sea NPC stat: Strength."
+  },
+  "statSeaInfluence": "Influence",
+  "@statSeaInfluence": {
+    "description": "7th Sea NPC stat: Influence."
+  },
+  "statSeaVillainyRank": "Villainy Rank",
+  "@statSeaVillainyRank": {
+    "description": "7th Sea NPC stat: Villainy Rank (computed = Strength + Influence)."
+  },
+  "statSeaAdvantages": "Advantages",
+  "@statSeaAdvantages": {
+    "description": "7th Sea NPC stat: Advantages checklist."
+  },
+  "statSeaSchemes": "Schemes",
+  "@statSeaSchemes": {
+    "description": "7th Sea Villain NPC stat: Schemes section title."
+  },
+  "npcSeaSchemeNew": "New scheme",
+  "@npcSeaSchemeNew": {
+    "description": "7th Sea Villain: button to add a new scheme."
+  },
+  "npcSeaSchemeName": "Scheme name",
+  "@npcSeaSchemeName": {
+    "description": "7th Sea Villain scheme dialog: the name field label."
+  },
+  "npcSeaSchemeCost": "Cost",
+  "@npcSeaSchemeCost": {
+    "description": "7th Sea Villain scheme dialog: the cost (influence) field label."
+  },
+  "npcSeaSchemeAdd": "Add",
+  "@npcSeaSchemeAdd": {
+    "description": "7th Sea Villain scheme dialog: the confirm button when adding."
+  },
+  "npcSeaSchemeEditTitle": "Edit scheme",
+  "@npcSeaSchemeEditTitle": {
+    "description": "7th Sea Villain scheme dialog title when editing an existing scheme."
+  },
+  "npcSeaSchemeAvailable": "Available influence",
+  "@npcSeaSchemeAvailable": {
+    "description": "7th Sea Villain scheme dialog: label for the remaining influence budget."
+  },
+  "npcSeaCostsTitle": "Costs",
+  "@npcSeaCostsTitle": {
+    "description": "7th Sea Villain play schemes manager: right-panel title (list of purchased costs)."
+  },
+  "npcSeaSchemeBuy": "Buy",
+  "@npcSeaSchemeBuy": {
+    "description": "7th Sea Villain play schemes manager: the Buy button / buy-cost dialog confirm."
+  },
+  "npcSeaCostDescription": "Description",
+  "@npcSeaCostDescription": {
+    "description": "7th Sea Villain buy-cost dialog: the description field label."
+  },
+  "npcSeaTileStrength": "Strength",
+  "@npcSeaTileStrength": {
+    "description": "7th Sea Villain NPC tile badge: Strength (short label)."
+  },
+  "npcSeaTileInfluence": "Influence",
+  "@npcSeaTileInfluence": {
+    "description": "7th Sea Villain NPC tile badge: Influence (short label)."
+  },
+  "npcSeaTileRank": "Rank",
+  "@npcSeaTileRank": {
+    "description": "7th Sea Villain NPC tile badge: Rank (short label)."
+  }
+}
